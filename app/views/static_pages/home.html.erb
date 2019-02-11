@@ -17,18 +17,8 @@ $(function() {
 
 </script>
 <div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.jp/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+  <h1>popover おためし</h1>
 </div>
-
-<%= link_to image_tag("https://rubyonrails.org/images/rails-logo.svg", alt: "Rails",  width: "220", height: "78" ), 'http://rubyonrails.org/' %>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -55,7 +45,8 @@ $(function() {
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" id="close" class="btn btn-default" data-dismiss="popover">Close</button>
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">modal Close</button>
+        <button type="button" id="close" class="btn btn-default" data-dismiss="popover">popover Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
