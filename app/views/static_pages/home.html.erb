@@ -1,37 +1,20 @@
 <script>
-$(function(){
-    $("a[rel=tooltip]").tooltip();
+$(function () {
+  $('[data-toggle="popover"]').popover({
+    html: true,
+    container: 'body',
+    content: function () {
+      var contentId = '#' + $(this).data('content-id');
+      return $(contentId).html();
+    }
+  });
 });
-$(function(){
-  $(".alert").alert();
+
+$(function() {
+  $('[data-dismiss="popover"]').popover('hide');
+  $('#close').popover('hide');
 });
-$(function(){
-  $(".tabs").button();
-});
-$(function(){
-  $(".carousel").carousel();
-});
-$(function(){
-  $(".collapse").collapse();
-});
-$(function(){
-  $(".dropdown-toggle").dropdown();
-});
-$(function(){
-  $(".modal").modal;
-});
-$(function(){
-  $("a[rel]").popover;
-});
-$(function(){
-  $(".navbar").scrollspy();
-});
-$(function(){
-  $(".typeahead").typeahead();
-});
-$(function(){
-  $(".tab").tab("show") ;
-});
+
 </script>
 <div class="center hero-unit">
   <h1>Welcome to the Sample App</h1>
@@ -43,7 +26,50 @@ $(function(){
   </h2>
 
   <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
-  <%= link_to "pupover", '#', class: "btn btn-large btn-primary" %>
+  <%= link_to "pupover", '#', id: "popsample", class: "btn btn-large btn-primary" %>
 </div>
 
 <%= link_to image_tag("https://rubyonrails.org/images/rails-logo.svg", alt: "Rails",  width: "220", height: "78" ), 'http://rubyonrails.org/' %>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="popover" >
+  Lanch demo popover
+</button>
+
+<button type="button" 
+        class="btn btn-lg btn-danger" 
+        data-toggle="popover" 
+        data-placement="bottom"
+        data-content-id="myModal">Click to toggle popover</button>
+
+<button type="button" 
+        class="btn btn-link" 
+        data-toggle="popover" 
+        data-placement="bottom"
+        data-content-id="myModal">Click to toggle popover</button>
+
+<br/>
+<%= link_to "pupover", "#", "data-toggle" => "popover", "data-placement" => "bottom", "data-content-id" => "myModal", trigger: 'hover' %>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close" class="btn btn-default" data-dismiss="popover">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
