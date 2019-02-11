@@ -26,7 +26,6 @@ $(function() {
   </h2>
 
   <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
-  <%= link_to "pupover", '#', id: "popsample", class: "btn btn-large btn-primary" %>
 </div>
 
 <%= link_to image_tag("https://rubyonrails.org/images/rails-logo.svg", alt: "Rails",  width: "220", height: "78" ), 'http://rubyonrails.org/' %>
@@ -35,15 +34,6 @@ $(function() {
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="popover" >
-  Lanch demo popover
-</button>
-
-<button type="button" 
-        class="btn btn-lg btn-danger" 
-        data-toggle="popover" 
-        data-placement="bottom"
-        data-content-id="myModal">Click to toggle popover</button>
 
 <button type="button" 
         class="btn btn-link" 
@@ -52,7 +42,6 @@ $(function() {
         data-content-id="myModal">Click to toggle popover</button>
 
 <br/>
-<%= link_to "pupover", "#", "data-toggle" => "popover", "data-placement" => "bottom", "data-content-id" => "myModal", trigger: 'hover' %>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
