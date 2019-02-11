@@ -1,5 +1,5 @@
 <script>
-$(function () {
+$(function() {
   $('[data-toggle="popover"]').popover({
     html: true,
     container: 'body',
@@ -7,12 +7,12 @@ $(function () {
       var contentId = '#' + $(this).data('content-id');
       return $(contentId).html();
     }
+  }).on('shown.bs.popover', function(e){
+    var popover = jQuery(this);
+    $('[data-dismiss="popover"]').on('click', function(e){
+      popover.popover('hide');
+    });
   });
-});
-
-$(function() {
-  $('[data-dismiss="popover"]').popover('hide');
-  $('#close').popover('hide');
 });
 
 </script>
